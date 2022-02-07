@@ -1,2 +1,2 @@
-# Marvel-Insider
-An app to help you learn more about the history and origins of the comic book heros.
+# Movies-you-will-love
+An app to help you learn more about movies.
