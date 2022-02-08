@@ -1,0 +1,19 @@
+.navbar {
+    background-color: blue;
+    color: white;
+    justify-content: center;
+    font-size:xx-large;
+    font-weight: 700;
+}
+.container {
+    margin: 5px;
+}
+.container {
+    max-width: 98%;
+}
+
+#movie-poster {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

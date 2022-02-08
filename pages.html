@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Movies!</title>
+    <link rel="stylesheet" type="text/css" href="./Assets/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./Assets/style.css">
 </head>
+
 <body>
-    
+
+    <nav class="navbar">
+        <span class="navbar-text">
+            Movies!
+        </span>
+    </nav>
+    <div Class="container">
+        <!--search bar-->
+        <div class="row">
+            <div class="card col-sm-2 form-group bg-light">
+                <label for="searchbar">Search for a movie!</label>
+                <input type="text" class="form-control" id="city-input">
+                <button type="submit" class="btn btn-primary" id="submit-Btn">Submit</button>
+                <!--search history buttons-->
+                <ul class="btn-group-vertical list-group">
+
+                </ul>
+            </div>
+            <div class="col-sm-10">
+                <!--most recent search dashboard-->
+                <div class="card-body row ml-2 border border-dark rounded">
+                    <div class="col-sm-12" id="current-weather">
+                        <h3 class="card-title mb-1 mt-2 bolder" id="city-result">Movie Title:</h3>
+                        <p>Rating:<span class="current" id="temperature"></span></p>
+                        <p>Quick Bio:<span class="current" id="humidity"></span></p>
+                        <p>Release Date:<span class="current" id="wind-speed"></span></p>
+                        <p>Director:<span class="current" id="wind-speed"></span></p>
+                        <p>Actors:<span class="current" id="wind-speed"></span></p>
+                        <p>Other things maybe:<span class="current" id="wind-speed"></span></p>
+                        <p>wiki information:<span class="current" id="wind-speed"></span></p>
+                        </p>
+                    </div>
+                    <div class="card" style="width: 18rem;" id="movie-poster">
+                        <img class="card-img-top" src="https://via.placeholder.com/150 " alt="Card image cap">
+                        <div class="card-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
