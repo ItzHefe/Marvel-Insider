@@ -19,7 +19,7 @@
 }
 
 .header {
-    padding: 20px;
+    padding: 30px;
     border-left: 30%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: rgb(104, 104, 246);
@@ -27,27 +27,24 @@
 }
 
 .header h1 {
-    display: inline-block;
-    font-size: 75px;
-    margin-left: 30%;
+    font-size: 50px;
 }
 
 form.search-bar input[type=text] {
     position: absolute;
-    top: 25%;
-    left: 25%;
+    top: 20px;
+    left: 500px;
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
-    float: left;
-    width: 50%;
+    width: 40%;
     background: #f1f1f1;
   }
 
 form.search-bar button {
     position: absolute;
-    top: 25%;
-    right: 20%;
+    left: 940px;
+    top: 20px;
     width: 5%;
     padding: 10px;
     background: #000000;
@@ -69,6 +66,16 @@ form.search-bar button {
 
   a {
     position: absolute;
-    top: 31%;
-    right: 21%;
+    left: 500px;
+    top: 75px;
+    text-decoration: none; color: black;
+    text-decoration: underline;
   }
+
+body {
+    background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-1614634680.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    }
