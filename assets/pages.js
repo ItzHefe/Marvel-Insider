@@ -94,4 +94,4 @@ $("#submit-Btn").on("click", displayTitle);
         //using image for now but check pasters for better images??
         $(posterEl).append(reponse.image);
     });
-};
+}:
