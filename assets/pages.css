@@ -1,0 +1,27 @@
+.navbar {
+    background-color: rgb(104, 104, 246);
+    color: white;
+    justify-content: center;
+    font-size:xx-large;
+    font-weight: 700;
+}
+.container {
+    margin: 5px;
+}
+.container {
+    max-width: 98%;
+}
+
+#movie-poster {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.header {
+    padding: 30px;
+    border-left: 30%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(104, 104, 246);
+    color: #000000;
+}
