@@ -43,24 +43,24 @@ var lsTitle = [];
 //         console.log(data);
 //     });
 
-// //localStorage check element
-// function find(t) {
-//     for (var i = 0; i < lsTitle.length; i++) {
-//         if (t.toUppercase === lsTitle[i]) {
-//             return -1;
-//         }
-//     }
-//     return 1;
-// }
+//localStorage check element
+function find(t) {
+    for (var i = 0; i < lsTitle.length; i++) {
+        if (t === lsTitle[i]) {
+            return -1;
+        }
+    }
+    return 1;
+}
 
 
 //click on submit button to run function based on user input
 $("#submit-Btn").on("click", displayTitle);
 function displayTitle(event) {
     event.preventDefault();
-    if (userSearchEl.val().trim() !== "") {
-        title = userSearchEl.val().trim();
-        currentTitle(title);
+    if (userSearchEl.value !== "") {
+        title = userSearchEl.value;
+       funcTitle(title);
     }
 }
 
@@ -72,7 +72,7 @@ function funcTitle(title){
         method:'GET',
     }).then(function(response){
         console.log(response);
-        currentTitle(response.id);
+        currentTitle(response.results[0].id);
     });
 };
 
@@ -92,6 +92,6 @@ function currentTitle(id){
         $(directorEl).html(response.director);
         $(actorEl).html(response.stars);
         //using image for now but check pasters for better images??
-        $(posterEl).append(reponse.image);
+        $(posterEl).append(response.image);
     });
 };
