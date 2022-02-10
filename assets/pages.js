@@ -43,41 +43,41 @@ var lsTitle = [];
 //         console.log(data);
 //     });
 
-// //localStorage check element
-// function find(t) {
-//     for (var i = 0; i < lsTitle.length; i++) {
-//         if (t.toUppercase === lsTitle[i]) {
-//             return -1;
-//         }
-//     }
-//     return 1;
-// }
+//localStorage check element
+function find(t) {
+    for (var i = 0; i < lsTitle.length; i++) {
+        if (t === lsTitle[i]) {
+            return -1;
+        }
+    }
+    return 1;
+}
 
 
 //click on submit button to run function based on user input
 $("#submit-Btn").on("click", displayTitle);
-//function displayTitle(event) {
+function displayTitle(event) {
     event.preventDefault();
-    if (userSearchEl.val().trim() !== "") {
-        title = userSearchEl.val().trim();
-        currentTitle(title);
+    if (userSearchEl.value !== "") {
+        title = userSearchEl.value;
+       funcTitle(title);
     }
 }
 
 //need to update to dynamically call in the locally stored search title
-//function funcTitle(title){
+function funcTitle(title){
     var queryURL= "https://imdb-api.com/en/API/SearchTitle/k_9682875a/inception";
     $.ajax({
         url:queryURL,
         method:'GET',
     }).then(function(response){
         console.log(response);
-        currentTitle(response.id);
+        currentTitle(response.results[0].id);
     });
 };
 
 //will need to update to dynamically change for searched values
-//function currentTitle(id){
+function currentTitle(id){
     var queryURL= "https://imdb-api.com/en/API/Title/k_9682875a/"+ id +"/FullCast,Posters,Images,Ratings";
     $.ajax({
         url:queryURL,
@@ -92,6 +92,6 @@ $("#submit-Btn").on("click", displayTitle);
         $(directorEl).html(response.director);
         $(actorEl).html(response.stars);
         //using image for now but check pasters for better images??
-        $(posterEl).append(reponse.image);
+        $(posterEl).append(response.image);
     });
 }:
