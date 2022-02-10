@@ -56,7 +56,7 @@ var lsTitle = [];
 
 //click on submit button to run function based on user input
 $("#submit-Btn").on("click", displayTitle);
-//function displayTitle(event) {
+function displayTitle(event) {
     event.preventDefault();
     if (userSearchEl.val().trim() !== "") {
         title = userSearchEl.val().trim();
@@ -65,7 +65,7 @@ $("#submit-Btn").on("click", displayTitle);
 }
 
 //need to update to dynamically call in the locally stored search title
-//function funcTitle(title){
+function funcTitle(title){
     var queryURL= "https://imdb-api.com/en/API/SearchTitle/k_9682875a/inception";
     $.ajax({
         url:queryURL,
@@ -77,7 +77,7 @@ $("#submit-Btn").on("click", displayTitle);
 };
 
 //will need to update to dynamically change for searched values
-//function currentTitle(id){
+function currentTitle(id){
     var queryURL= "https://imdb-api.com/en/API/Title/k_9682875a/"+ id +"/FullCast,Posters,Images,Ratings";
     $.ajax({
         url:queryURL,
