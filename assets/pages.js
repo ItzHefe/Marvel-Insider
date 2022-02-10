@@ -94,4 +94,4 @@ function currentTitle(id){
         //using image for now but check pasters for better images??
         $(posterEl).append(response.image);
     });
-};
+}:
