@@ -17,3 +17,4 @@ $("#submit-btn").on("click", changePage);
 function changePage() {
     window.location.replace('./pages.html');
 }
+//text comment
