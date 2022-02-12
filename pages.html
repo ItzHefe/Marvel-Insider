@@ -16,13 +16,13 @@
 
     <nav class="navbar">
         <span class="navbar-text">
-            Movies!
+            Movies You Love!
         </span>
     </nav>
     <div Class="container">
         <!--search bar-->
         <div class="row">
-            <div class="card col-sm-2 form-group bg-light">
+            <div class="card col-sm-2 form-group bg-light" id="pages-search">
                 <label for="searchbar">Search for a movie!</label>
                 <input type="text" class="form-control" id="title-input">
                 <button type="submit" class="btn btn-primary" id="submit-Btn">Submit</button>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-sm-10">
                 <!--most recent search dashboard-->
-                <div class="card-body row ml-2 border border-dark rounded">
+                <div class="card-body row ml-2 border-dark rounded">
                     <div class="col-sm-12" id="current-movie">
                         <h3 class="card-title mb-1 mt-2 bolder" id="movie-result">Movie Title:</h3>
                         <p>Rating:<span class="current" id="rating"></span></p>

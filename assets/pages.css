@@ -1,21 +1,36 @@
 .navbar {
-    background-color: rgb(104, 104, 246);
-    color: white;
+    background-color: rgb(14, 14, 77);
+    color: rgb(175, 170, 190);
     justify-content: center;
     font-size:xx-large;
     font-weight: 700;
+    text-shadow: 2px 2px rgb(81, 79, 95);
 }
 .container {
-    margin: 5px;
+    position: absolute;
+    top: 15%;
+    width: 90%;
+    left: 10%;
+    border: 20px white;
+    background-color: white;
 }
-.container {
-    max-width: 98%;
+
+#current-movie {
+    background-color: white;
+    width: 120%;
+    border: 20px white;
 }
 
 #movie-poster {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 30px;
+    top: 30px;
+}
+
+#pages-search {
+    position: relative;
+    top: 10px;
+    left: 20px;
 }
 
 .header {
@@ -25,3 +40,10 @@
     background-color: rgb(104, 104, 246);
     color: #000000;
 }
+
+body {
+    background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-1614634680.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
