@@ -11,6 +11,7 @@ var directorEl = $('#director');
 var actorEl = $('#actors');
 var posterEl = $('#movie-poster');
 var posterImage = $('#movie-image');
+var streamEl = $('#stream');
 
 
 var ytKey = 'AIzaSyB4FHf5As3BVZRi3cl0KQjVyGsqAJLCW5k';
@@ -59,7 +60,7 @@ function find(t) {
 }
 
 var savedTitle = JSON.parse(localStorage.getItem('titlename')) || [];
-$(window).on( "load", funcTitle )
+$(window).on("load", funcTitle)
 
 //click on submit button to run function based on user input
 $("#submit-Btn").on("click", displayTitle);
@@ -67,35 +68,36 @@ function displayTitle(event) {
     event.preventDefault();
     if (userSearchEl.value !== "") {
         lsTitle.push(userSearchEl.val());
-        console.log (userSearchEl.val());
-        localStorage.setItem("titlename",JSON.stringify(lsTitle));
+        console.log(userSearchEl.val());
+        localStorage.setItem("titlename", JSON.stringify(lsTitle));
     }
     savedTitle = JSON.parse(localStorage.getItem('titlename')) || [];
     if (userSearchEl.value !== "") {
         title = userSearchEl.value;
-       funcTitle(title);
+        funcTitle(title);
     }
 };
 
 //need to update to dynamically call in the locally stored search title
-function funcTitle(title){
-    var queryURL= "https://imdb-api.com/en/API/SearchTitle/" + apiKey2 + "/" + savedTitle;
+function funcTitle(title) {
+    var queryURL = "https://imdb-api.com/en/API/SearchTitle/" + apiKey3 + "/" + savedTitle;
     $.ajax({
-        url:queryURL,
-        method:'GET',
-    }).then(function(response){
+        url: queryURL,
+        method: 'GET',
+    }).then(function (response) {
         console.log(response);
         currentTitle(response.results[0].id);
+        streamLocation(response.results[0].id);
     });
 };
 
 //will need to update to dynamically change for searched values
-function currentTitle(id){
-    var queryURL= "https://imdb-api.com/en/API/Title/" + apiKey2 + "/"+ id +"/FullCast,Posters,Images,Ratings";
+function currentTitle(id) {
+    var queryURL = "https://imdb-api.com/en/API/Title/" + apiKey3 + "/" + id + "/FullCast,Posters,Images,Ratings";
     $.ajax({
-        url:queryURL,
-        method:'GET',
-    }).then(function(response){
+        url: queryURL,
+        method: 'GET',
+    }).then(function (response) {
         console.log(response);
         $(currentTitleEl).html(response.title);
         $(ratingEl).html(response.imDbRating);
@@ -107,4 +109,18 @@ function currentTitle(id){
         //using image for now but check pasters for better images??
         $(posterImage).attr('src', response.image);
     });
+};
+
+function streamLocation(id) {
+    var settings ={
+        url: "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup?source_id=" + id + "&source=imdb&country=us",
+        method: 'GET',
+        headers: {
+            "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+            "x-rapidapi-key": "98c5b8db8amshc08c3e74e647d6bp1d9439jsnddc7ed8522e9"
+        }
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    })
 };
