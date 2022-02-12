@@ -9,9 +9,14 @@ var bioEl = $('#movie-bio');
 var releaseDateEl = $('#release-date');
 var directorEl = $('#director');
 var actorEl = $('#actors');
-var posterEl = $('movie-poster');
+var posterEl = $('#movie-poster');
+var posterImage = $('#movie-image');
 
+
+var ytKey = 'AIzaSyB4FHf5As3BVZRi3cl0KQjVyGsqAJLCW5k';
 var apiKey = 'k_9682875a';
+var apiKey2 = 'k_0111stv5';
+var apiKey3 = 'k_1p5sxkhz';
 var lsTitle = [];
 
 //search title API to get the movie ID
@@ -53,20 +58,28 @@ function find(t) {
     return 1;
 }
 
+var savedTitle = JSON.parse(localStorage.getItem('titlename')) || [];
+$(window).on( "load", funcTitle )
 
 //click on submit button to run function based on user input
 $("#submit-Btn").on("click", displayTitle);
 function displayTitle(event) {
     event.preventDefault();
     if (userSearchEl.value !== "") {
+        lsTitle.push(userSearchEl.val());
+        console.log (userSearchEl.val());
+        localStorage.setItem("titlename",JSON.stringify(lsTitle));
+    }
+    savedTitle = JSON.parse(localStorage.getItem('titlename')) || [];
+    if (userSearchEl.value !== "") {
         title = userSearchEl.value;
        funcTitle(title);
     }
-}
+};
 
 //need to update to dynamically call in the locally stored search title
 function funcTitle(title){
-    var queryURL= "https://imdb-api.com/en/API/SearchTitle/k_9682875a/inception";
+    var queryURL= "https://imdb-api.com/en/API/SearchTitle/" + apiKey2 + "/" + savedTitle;
     $.ajax({
         url:queryURL,
         method:'GET',
@@ -78,7 +91,7 @@ function funcTitle(title){
 
 //will need to update to dynamically change for searched values
 function currentTitle(id){
-    var queryURL= "https://imdb-api.com/en/API/Title/k_9682875a/"+ id +"/FullCast,Posters,Images,Ratings";
+    var queryURL= "https://imdb-api.com/en/API/Title/" + apiKey2 + "/"+ id +"/FullCast,Posters,Images,Ratings";
     $.ajax({
         url:queryURL,
         method:'GET',
@@ -89,9 +102,9 @@ function currentTitle(id){
         $(taglineEl).html(response.tagline);
         $(bioEl).html(response.plot);
         $(releaseDateEl).html(response.year);
-        $(directorEl).html(response.director);
+        $(directorEl).html(response.directors);
         $(actorEl).html(response.stars);
         //using image for now but check pasters for better images??
-        $(posterEl).append(response.image);
+        $(posterImage).attr('src', response.image);
     });
-}:
+};
