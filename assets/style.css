@@ -22,12 +22,13 @@
     padding: 30px;
     border-left: 30%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: rgb(104, 104, 246);
-    color: #000000;
+    background-color: rgb(14, 14, 77);
+    color: rgb(175, 170, 190);
 }
 
 .header h1 {
     font-size: 50px;
+    text-shadow: 2px 2px rgb(81, 79, 95);
 }
 
 form.search-bar input[type=text] {
@@ -37,7 +38,7 @@ form.search-bar input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
-    width: 40%;
+    width: 35.5%;
     background: #f1f1f1;
   }
 
@@ -50,7 +51,7 @@ form.search-bar button {
     background: #000000;
     color: white;
     font-size: 17px;
-    border: 1px solid grey;
+    border: 2px solid rgb(175, 170, 190);
     cursor: pointer;
   }
 
@@ -68,7 +69,7 @@ form.search-bar button {
     position: absolute;
     left: 500px;
     top: 75px;
-    text-decoration: none; color: black;
+    text-decoration: none; color: rgb(175, 170, 190);
     text-decoration: underline;
   }
 
