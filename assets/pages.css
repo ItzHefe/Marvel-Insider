@@ -11,8 +11,20 @@
     top: 15%;
     width: 90%;
     left: 10%;
-    border: 20px white;
+    border: 20px rgb(14, 14, 77);
     background-color: white;
+}
+
+#submit-Btn {
+    margin: 10px;
+}
+
+#movie-result {
+    border-bottom: solid;
+}
+
+#movie-poster {
+    align-items: center;
 }
 
 #current-movie {
@@ -27,6 +39,11 @@
     left: 20px;
 }
 
+.card {
+    border-radius: 0;
+    border: 0;
+}
+
 .header {
     padding: 30px;
     border-left: 30%;
@@ -38,6 +55,6 @@
 body {
     background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-1614634680.jpg');
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     }

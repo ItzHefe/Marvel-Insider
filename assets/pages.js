@@ -17,7 +17,7 @@ var streamEl = $('#stream');
 var ytKey = 'AIzaSyB4FHf5As3BVZRi3cl0KQjVyGsqAJLCW5k';
 var apiKey = 'k_9682875a';
 var apiKey2 = 'k_0111stv5';
-var apiKey3 = 'k_1p5sxkhz';
+//var apiKey3 = 'k_1p5sxkhz';
 var lsTitle = [];
 
 //search title API to get the movie ID
@@ -128,6 +128,6 @@ function streamLocation(id) {
         var displayNames = response.collection.locations.map(function (item) {
             return item.display_name;
         }) 
-        $(streamEl).html(displayNames.toString());
+        $(streamEl).html(displayNames.join(', '));
     })
 };
