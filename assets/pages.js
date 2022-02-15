@@ -80,7 +80,7 @@ function displayTitle(event) {
 
 //need to update to dynamically call in the locally stored search title
 function funcTitle(title) {
-    var queryURL = "https://imdb-api.com/en/API/SearchTitle/" + apiKey3 + "/" + savedTitle;
+    var queryURL = "https://imdb-api.com/en/API/SearchTitle/" + apiKey + "/" + savedTitle;
     $.ajax({
         url: queryURL,
         method: 'GET',
@@ -93,7 +93,7 @@ function funcTitle(title) {
 
 //will need to update to dynamically change for searched values
 function currentTitle(id) {
-    var queryURL = "https://imdb-api.com/en/API/Title/" + apiKey3 + "/" + id + "/FullCast,Posters,Images,Ratings";
+    var queryURL = "https://imdb-api.com/en/API/Title/" + apiKey + "/" + id + "/FullCast,Posters,Images,Ratings";
     $.ajax({
         url: queryURL,
         method: 'GET',
@@ -112,8 +112,9 @@ function currentTitle(id) {
 };
 
 function streamLocation(id) {
+    var streamURL = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup?source_id=" + id + "&source=imdb&country=us";
     var settings ={
-        url: "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/idlookup?source_id=" + id + "&source=imdb&country=us",
+        url: streamURL,
         method: 'GET',
         headers: {
             "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
@@ -122,5 +123,11 @@ function streamLocation(id) {
     };
     $.ajax(settings).done(function (response) {
         console.log(response);
+        //$(streamEl).html(response.collection.locations[0].display_name);
+
+        var displayNames = response.collection.locations.map(function (item) {
+            return item.display_name;
+        }) 
+        $(streamEl).html(displayNames.toString());
     })
 };
