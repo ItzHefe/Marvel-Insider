@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="./assets/reset.css"> 
-    <link rel="stylesheet" type="text/css" href="./assets/style.css"> 
+    <link rel="stylesheet" type="text/css" href="./assets/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
- 
+
     <title>Movies You Love!</title>
 </head>
 
 <body>
-    
-    <header class ="header">
-        <h1>Movies You Love!</h1>
-               
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="row justifty-content-start">
+            <header class="header col-sm-12">
+                <h1>Movies You Love!</h1>
 
-        <form class="search-bar">
-            <input type="text" id="mySearch" placeholder="Search For a Movie.." title="Type in a movie">
-            <button type="submit" class="fa fa-search" id="submit-btn"></button>
-        </form>
-        
-        <a href=https://www.imdb.com/what-to-watch/fan-favorites/?ref_=hm_fanfav_sm>Not sure what to look for?</a>
-         
-    </header>
 
+                <form class="search-bar col-sm-12 no-gutter">
+                    <input type="text" id="mySearch" placeholder=" Search For a Movie.." title="Type in a movie">
+                    <button type="submit" class="fa fa-search" id="submit-btn"></button>
+                </form>
+
+                <a href=https://www.imdb.com/what-to-watch/fan-favorites/?ref_=hm_fanfav_sm>Not sure what to look
+                    for?</a>
+
+            </header>
+        </div>
+        </div>
+    </nav>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -35,6 +43,5 @@
 
 
 </body>
+
 </html>
-
-
