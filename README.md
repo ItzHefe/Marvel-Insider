@@ -6,6 +6,8 @@ As a team, our main struggles were with learning how to work collaboratively wit
 
 You just simply go in and search any movie you would like the information for and it will take you to another page where you will get to see all of its information, as well as a movie poster. If you would like to search for a different movie, use the second search bar located on the left side of that page.
 
+![screencapture-file-Users-namideo-GitHub-Movies-you-will-love-pages-html-2022-02-16-16_36_04](https://user-images.githubusercontent.com/94868925/154361468-0668fae5-c023-4c24-a853-0799dc420e50.png)
+
 Here is a link to the deployed page: https://itzhefe.github.io/Movies-you-will-love/
 
 Here are links the the APIs utilized: https://developer.imdb.com/  
