@@ -10,6 +10,9 @@
     margin: 5px;
     max-width: 98%;
 }
+.row {
+  width: 100%;
+}
 
 .header {
     border-left: 30%;
@@ -24,11 +27,12 @@
 }
 
 form.search-bar input[type=text] {
-    font-size: 17px;
-    border: 1px solid grey;
-    width: 75%;
-    height: 40px;
-    background: #f1f1f1;
+
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 50%;
+  height: 40px;
+  background: #f1f1f1; 
 }
 
 .no-gutter {
@@ -44,6 +48,11 @@ form.search-bar button {
     font-size: 17px;
     border: 2px solid rgb(175, 170, 190);
     cursor: pointer;
+  }
+  
+  #search {
+    position: absolute;
+    right: 0;
   }
 
   form.search-bar button:hover {
