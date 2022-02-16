@@ -54,7 +54,5 @@
 
 body {
     background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-movies-1614634680.jpg');
-    background-size: contain;
-    background-repeat: repeat;
-    background-position: center;
+    background-size: cover;
     }
