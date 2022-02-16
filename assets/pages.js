@@ -17,7 +17,7 @@ var streamEl = $('#stream');
 var ytKey = 'AIzaSyB4FHf5As3BVZRi3cl0KQjVyGsqAJLCW5k';
 var apiKey = 'k_9682875a';
 var apiKey2 = 'k_0111stv5';
-//var apiKey3 = 'k_1p5sxkhz';
+var apiKey3 = 'k_1p5sxkhz';
 var lsTitle = [];
 
 //search title API to get the movie ID
@@ -80,7 +80,7 @@ function displayTitle(event) {
 
 //need to update to dynamically call in the locally stored search title
 function funcTitle(title) {
-    var queryURL = "https://imdb-api.com/en/API/SearchTitle/" + apiKey + "/" + savedTitle;
+    var queryURL = "https://imdb-api.com/en/API/SearchTitle/" + apiKey3 + "/" + savedTitle;
     $.ajax({
         url: queryURL,
         method: 'GET',
@@ -93,7 +93,7 @@ function funcTitle(title) {
 
 //will need to update to dynamically change for searched values
 function currentTitle(id) {
-    var queryURL = "https://imdb-api.com/en/API/Title/" + apiKey + "/" + id + "/FullCast,Posters,Images,Ratings";
+    var queryURL = "https://imdb-api.com/en/API/Title/" + apiKey3 + "/" + id + "/FullCast,Posters,Images,Ratings";
     $.ajax({
         url: queryURL,
         method: 'GET',
